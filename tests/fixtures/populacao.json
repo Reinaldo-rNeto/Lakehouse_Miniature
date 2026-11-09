@@ -1,0 +1,89 @@
+[
+ {
+  "id": "9324",
+  "variavel": "Populacao residente estimada",
+  "unidade": "Pessoas",
+  "resultados": [
+   {
+    "classificacoes": [],
+    "series": [
+     {
+      "localidade": {
+       "id": "2600054",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Abreu e Lima - PE"
+      },
+      "serie": {
+       "2019": "100000",
+       "2020": "101000",
+       "2021": "102000"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2604106",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Caruaru - PE"
+      },
+      "serie": {
+       "2019": "370000",
+       "2020": "372000",
+       "2021": "374000"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2609600",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Olinda - PE"
+      },
+      "serie": {
+       "2019": "350000",
+       "2020": "349000",
+       "2021": "-"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611101",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Petrolina - PE"
+      },
+      "serie": {
+       "2019": "360000",
+       "2020": "365000",
+       "2021": "370000"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611606",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Recife - PE"
+      },
+      "serie": {
+       "2019": "1600000",
+       "2020": "1610000",
+       "2021": "1620000"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

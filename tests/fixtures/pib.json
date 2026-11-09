@@ -1,0 +1,437 @@
+[
+ {
+  "id": "37",
+  "variavel": "Produto Interno Bruto a precos correntes",
+  "unidade": "Mil Reais",
+  "resultados": [
+   {
+    "classificacoes": [],
+    "series": [
+     {
+      "localidade": {
+       "id": "2600054",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Abreu e Lima - PE"
+      },
+      "serie": {
+       "2019": "1000000.00",
+       "2020": "1100000.00",
+       "2021": "1200000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2604106",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Caruaru - PE"
+      },
+      "serie": {
+       "2019": "2000000.00",
+       "2020": "2200000.00",
+       "2021": "2400000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2609600",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Olinda - PE"
+      },
+      "serie": {
+       "2019": "3000000.00",
+       "2020": "3300000.00",
+       "2021": "3600000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611101",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Petrolina - PE"
+      },
+      "serie": {
+       "2019": "4000000.00",
+       "2020": "4400000.00",
+       "2021": "4800000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611606",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Recife - PE"
+      },
+      "serie": {
+       "2019": "5000000.00",
+       "2020": "5500000.00",
+       "2021": "6000000.00"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "513",
+  "variavel": "Valor adicionado bruto a precos correntes da agropecuaria",
+  "unidade": "Mil Reais",
+  "resultados": [
+   {
+    "classificacoes": [],
+    "series": [
+     {
+      "localidade": {
+       "id": "2600054",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Abreu e Lima - PE"
+      },
+      "serie": {
+       "2019": "10000.00",
+       "2020": "11000.00",
+       "2021": "12000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2604106",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Caruaru - PE"
+      },
+      "serie": {
+       "2019": "20000.00",
+       "2020": "22000.00",
+       "2021": "24000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2609600",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Olinda - PE"
+      },
+      "serie": {
+       "2019": "30000.00",
+       "2020": "33000.00",
+       "2021": "36000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611101",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Petrolina - PE"
+      },
+      "serie": {
+       "2019": "40000.00",
+       "2020": "44000.00",
+       "2021": "48000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611606",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Recife - PE"
+      },
+      "serie": {
+       "2019": "50000.00",
+       "2020": "55000.00",
+       "2021": "60000.00"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "517",
+  "variavel": "Valor adicionado bruto a precos correntes da industria",
+  "unidade": "Mil Reais",
+  "resultados": [
+   {
+    "classificacoes": [],
+    "series": [
+     {
+      "localidade": {
+       "id": "2600054",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Abreu e Lima - PE"
+      },
+      "serie": {
+       "2019": "200000.00",
+       "2020": "220000.00",
+       "2021": "240000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2604106",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Caruaru - PE"
+      },
+      "serie": {
+       "2019": "400000.00",
+       "2020": "440000.00",
+       "2021": "480000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2609600",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Olinda - PE"
+      },
+      "serie": {
+       "2019": "600000.00",
+       "2020": "660000.00",
+       "2021": "720000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611101",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Petrolina - PE"
+      },
+      "serie": {
+       "2019": "800000.00",
+       "2020": "880000.00",
+       "2021": "960000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611606",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Recife - PE"
+      },
+      "serie": {
+       "2019": "1000000.00",
+       "2020": "1100000.00",
+       "2021": "1200000.00"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "6575",
+  "variavel": "Valor adicionado bruto a precos correntes dos servicos, exclusive administracao, defesa, educacao e saude publicas e seguridade social",
+  "unidade": "Mil Reais",
+  "resultados": [
+   {
+    "classificacoes": [],
+    "series": [
+     {
+      "localidade": {
+       "id": "2600054",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Abreu e Lima - PE"
+      },
+      "serie": {
+       "2019": "300000.00",
+       "2020": "330000.00",
+       "2021": "360000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2604106",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Caruaru - PE"
+      },
+      "serie": {
+       "2019": "600000.00",
+       "2020": "660000.00",
+       "2021": "720000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2609600",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Olinda - PE"
+      },
+      "serie": {
+       "2019": "900000.00",
+       "2020": "990000.00",
+       "2021": "1080000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611101",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Petrolina - PE"
+      },
+      "serie": {
+       "2019": "1200000.00",
+       "2020": "1320000.00",
+       "2021": "1440000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611606",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Recife - PE"
+      },
+      "serie": {
+       "2019": "1500000.00",
+       "2020": "1650000.00",
+       "2021": "1800000.00"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "525",
+  "variavel": "Valor adicionado bruto a precos correntes da administracao, defesa, educacao e saude publicas e seguridade social",
+  "unidade": "Mil Reais",
+  "resultados": [
+   {
+    "classificacoes": [],
+    "series": [
+     {
+      "localidade": {
+       "id": "2600054",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Abreu e Lima - PE"
+      },
+      "serie": {
+       "2019": "250000.00",
+       "2020": "275000.00",
+       "2021": "300000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2604106",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Caruaru - PE"
+      },
+      "serie": {
+       "2019": "500000.00",
+       "2020": "550000.00",
+       "2021": "600000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2609600",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Olinda - PE"
+      },
+      "serie": {
+       "2019": "750000.00",
+       "2020": "825000.00",
+       "2021": "..."
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611101",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Petrolina - PE"
+      },
+      "serie": {
+       "2019": "1000000.00",
+       "2020": "1100000.00",
+       "2021": "1200000.00"
+      }
+     },
+     {
+      "localidade": {
+       "id": "2611606",
+       "nivel": {
+        "id": "N6",
+        "nome": "Municipio"
+       },
+       "nome": "Recife - PE"
+      },
+      "serie": {
+       "2019": "1250000.00",
+       "2020": "1375000.00",
+       "2021": "1500000.00"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

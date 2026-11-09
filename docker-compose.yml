@@ -1,0 +1,121 @@
+name: lakehouse-ibge
+
+# Mesmas variaveis de checksum nos clientes AWS SDK: alguns armazenamentos
+# compativeis com S3 reclamam do checksum "novo" do SDK. when_required evita isso.
+x-s3-client-env: &s3-client-env
+  AWS_ACCESS_KEY_ID: ${S3_ACCESS_KEY:?defina S3_ACCESS_KEY no .env}
+  AWS_SECRET_ACCESS_KEY: ${S3_SECRET_KEY:?defina S3_SECRET_KEY no .env}
+  AWS_REGION: us-east-1
+  AWS_DEFAULT_REGION: us-east-1
+  AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+  AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+
+services:
+  # Armazenamento de objetos (API S3 na porta 8333). Guarda todos os arquivos das tabelas.
+  seaweedfs:
+    image: chrislusf/seaweedfs:${SEAWEEDFS_TAG:-latest}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        sed -e "s|__ACCESS_KEY__|$${S3_ACCESS_KEY}|" -e "s|__SECRET_KEY__|$${S3_SECRET_KEY}|" /config/s3.json.template > /tmp/s3.json
+        exec /usr/bin/weed server -dir=/data -s3 -s3.port=8333 -s3.config=/tmp/s3.json -ip.bind=0.0.0.0 -master.volumeSizeLimitMB=1024
+    environment:
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:?defina S3_ACCESS_KEY no .env}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:?defina S3_SECRET_KEY no .env}
+    ports:
+      - "127.0.0.1:8333:8333"   # API S3
+      - "127.0.0.1:8888:8888"   # navegador de arquivos (filer)
+      - "127.0.0.1:9333:9333"   # painel do master
+    volumes:
+      - seaweed_data:/data
+      - ./config/seaweedfs:/config:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:9333/cluster/status || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  # Roda uma vez: cria o bucket e as pastas da arquitetura medalhao
+  s3-init:
+    image: amazon/aws-cli:latest
+    depends_on:
+      seaweedfs:
+        condition: service_healthy
+    environment:
+      <<: *s3-client-env
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        S3="aws --endpoint-url http://seaweedfs:8333"
+        until $$S3 s3 ls >/dev/null 2>&1; do echo "aguardando a API S3..."; sleep 2; done
+        $$S3 s3 mb s3://lakehouse 2>/dev/null || true
+        for camada in bronze silver gold; do
+          $$S3 s3api put-object --bucket lakehouse --key "$$camada/" >/dev/null
+        done
+        echo "estrutura medalhao criada em s3://lakehouse/{bronze,silver,gold}"
+    restart: "no"
+
+  # Catalogo Iceberg (protocolo REST). E a imagem de teste do projeto Iceberg:
+  # boa para estudo, nao para producao. O estado fica num SQLite no volume.
+  rest:
+    image: apache/iceberg-rest-fixture:1.10.0
+    depends_on:
+      s3-init:
+        condition: service_completed_successfully
+    environment:
+      <<: *s3-client-env
+      CATALOG_WAREHOUSE: s3://lakehouse
+      CATALOG_IO__IMPL: org.apache.iceberg.aws.s3.S3FileIO
+      CATALOG_S3_ENDPOINT: http://seaweedfs:8333
+      CATALOG_S3_PATH__STYLE__ACCESS: "true"
+      CATALOG_CATALOG__IMPL: org.apache.iceberg.jdbc.JdbcCatalog
+      CATALOG_URI: jdbc:sqlite:file:/data/catalog.db
+    ports:
+      - "127.0.0.1:8181:8181"
+    volumes:
+      - catalog_data:/data
+
+  # Motor de consulta SQL (le as mesmas tabelas Iceberg)
+  trino:
+    image: trinodb/trino:${TRINO_TAG:-480}
+    depends_on:
+      - rest
+    environment:
+      <<: *s3-client-env
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./config/trino/iceberg.properties:/etc/trino/catalog/iceberg.properties:ro
+      - ./sql:/sql:ro
+
+  # Motor de processamento (PySpark). Nao sobe com "up": use "docker compose run --rm spark ..."
+  spark:
+    build:
+      context: .
+      dockerfile: docker/spark/Dockerfile
+    profiles: ["jobs"]
+    depends_on:
+      - rest
+    working_dir: /app
+    environment:
+      <<: *s3-client-env
+      LAKE_BACKEND: iceberg
+      ICEBERG_REST_URI: http://rest:8181
+      S3_ENDPOINT: http://seaweedfs:8333
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+      S3_REGION: us-east-1
+      ICEBERG_VERSION: ${ICEBERG_VERSION:-1.10.1}
+      IBGE_UF: ${IBGE_UF:-26}
+      IBGE_PERIODOS: ${IBGE_PERIODOS:-2019|2020|2021|2022|2023}
+      IBGE_OFFLINE_DIR: ${IBGE_OFFLINE_DIR:-}
+    volumes:
+      - ./:/app
+      - ivy_cache:/root/.ivy2
+
+volumes:
+  seaweed_data:
+  catalog_data:
+  ivy_cache:

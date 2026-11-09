@@ -1,0 +1,202 @@
+[
+ {
+  "id": 2600054,
+  "nome": "Abreu e Lima",
+  "microrregiao": {
+   "id": 26017,
+   "nome": "Recife",
+   "mesorregiao": {
+    "id": 2605,
+    "nome": "Metropolitana de Recife",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  },
+  "regiao-imediata": {
+   "id": 260001,
+   "nome": "Recife",
+   "regiao-intermediaria": {
+    "id": 2601,
+    "nome": "Recife",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  }
+ },
+ {
+  "id": 2604106,
+  "nome": "Caruaru",
+  "microrregiao": {
+   "id": 26012,
+   "nome": "Vale do Ipojuca",
+   "mesorregiao": {
+    "id": 2603,
+    "nome": "Agreste Pernambucano",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  },
+  "regiao-imediata": {
+   "id": 260005,
+   "nome": "Caruaru",
+   "regiao-intermediaria": {
+    "id": 2602,
+    "nome": "Caruaru",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  }
+ },
+ {
+  "id": 2609600,
+  "nome": "Olinda",
+  "microrregiao": {
+   "id": 26017,
+   "nome": "Recife",
+   "mesorregiao": {
+    "id": 2605,
+    "nome": "Metropolitana de Recife",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  },
+  "regiao-imediata": {
+   "id": 260001,
+   "nome": "Recife",
+   "regiao-intermediaria": {
+    "id": 2601,
+    "nome": "Recife",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  }
+ },
+ {
+  "id": 2611101,
+  "nome": "Petrolina",
+  "microrregiao": {
+   "id": 26014,
+   "nome": "Petrolina",
+   "mesorregiao": {
+    "id": 2602,
+    "nome": "Sao Francisco Pernambucano",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  },
+  "regiao-imediata": {
+   "id": 260011,
+   "nome": "Petrolina",
+   "regiao-intermediaria": {
+    "id": 2605,
+    "nome": "Petrolina",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  }
+ },
+ {
+  "id": 2611606,
+  "nome": "Recife",
+  "microrregiao": {
+   "id": 26017,
+   "nome": "Recife",
+   "mesorregiao": {
+    "id": 2605,
+    "nome": "Metropolitana de Recife",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  },
+  "regiao-imediata": {
+   "id": 260001,
+   "nome": "Recife",
+   "regiao-intermediaria": {
+    "id": 2601,
+    "nome": "Recife",
+    "UF": {
+     "id": 26,
+     "sigla": "PE",
+     "nome": "Pernambuco",
+     "regiao": {
+      "id": 2,
+      "sigla": "NE",
+      "nome": "Nordeste"
+     }
+    }
+   }
+  }
+ }
+]
